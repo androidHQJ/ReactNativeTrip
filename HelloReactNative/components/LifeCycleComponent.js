@@ -42,6 +42,6 @@ export default class LifeCycleComponent extends Component{
 
     render(){
         console.log('--------render----------')
-        return <Text style={{fontSize:20,backgroundColor:'red'}}>Hello lifecycle:{this.props.name}</Text>
+        return <Text style={{fontSize:20,backgroundColor:'red'}}>Hello ReactNative:{this.props.name}</Text>
     }
  }
