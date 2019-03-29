@@ -1,0 +1,28 @@
+{
+    // "workbench.colorTheme": "Solarized Dark", // 主题
+    "editor.detectIndentation": false, // 防止覆盖掉设置的缩进
+    "editor.wordWrap": "on", // 自动折行
+    "editor.parameterHints": false,
+    "javascript.validate.enable": false, // 关闭默认的js验证，js中使用flow或ts语法会报错，需要关闭
+    "vetur.format.options.tabSize": 4,
+    "typescri.validate.enable": false,
+    
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [{
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ],
+}
