@@ -25,4 +25,5 @@
             "autoFix": true
         }
     ],
+    "vetur.format.defaultFormatter.html": "prettier"
 }
