@@ -1,15 +1,18 @@
-package com.heqijun.rnhybridandroid;
+package com.heqijun.rnhybridandroid.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioGroup;
+
+import com.heqijun.rnhybridandroid.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup radioGroup;
     private int userModle=1;
+    private EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        editText=((EditText) findViewById(R.id.edit));
     }
 
     public void jump(View view) {
+        String moudleName=editText.getText().toString();
         if (userModle==1){
-            ReactPageActivity.start(this);
+            ReactPageActivity.start(this,moudleName);
         }else if (userModle==2){
-            RNPageActivity.start(this);
+            RNPageActivity.start(this,moudleName);
         }
     }
 }

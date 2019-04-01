@@ -1,4 +1,4 @@
-package com.heqijun.rnhybridandroid;
+package com.heqijun.rnhybridandroid.ui;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import com.facebook.react.common.LifecycleState;
 import com.facebook.react.devsupport.DoubleTapReloadRecognizer;
 import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler;
 import com.facebook.react.shell.MainReactPackage;
+import com.heqijun.rnhybridandroid.base.Constants;
+import com.heqijun.rnhybridandroid.BuildConfig;
 
 public class RNPageActivity extends AppCompatActivity
         implements DefaultHardwareBackBtnHandler {
@@ -22,8 +24,9 @@ public class RNPageActivity extends AppCompatActivity
     private DoubleTapReloadRecognizer mDoubleTapReloadRecognizer;
     private boolean mDeveloperSupport=true;
 
-    public static void start(Context context){
+    public static void start(Context context,String moudleName){
         Intent intent=new Intent(context,RNPageActivity.class);
+        intent.putExtra(Constants.EXTRA_MODULE_NAME,moudleName);
         context.startActivity(intent);
     }
 
@@ -34,18 +37,20 @@ public class RNPageActivity extends AppCompatActivity
 
         mDoubleTapReloadRecognizer = new DoubleTapReloadRecognizer();
 
+        String moudleName=getIntent().getStringExtra(Constants.EXTRA_MODULE_NAME);
+
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModulePath("index") //v0.50
-                //.setJSMainModuleName("index") //v0.20
+//                .setJSMainModuleName("index") //v0.20~v0.40
                 .addPackage(new MainReactPackage())
                 .setUseDeveloperSupport(BuildConfig.DEBUG)
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 .build();
         // 这个"App1"名字一定要和我们在index.js中注册的名字保持一致AppRegistry.registerComponent()
-        mReactRootView.startReactApplication(mReactInstanceManager, "App1", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, moudleName, null);
 
         setContentView(mReactRootView);
 

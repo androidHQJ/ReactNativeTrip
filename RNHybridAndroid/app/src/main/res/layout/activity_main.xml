@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -27,6 +27,12 @@
             android:text="by ReactInstanceManager"/>
 
     </RadioGroup>
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="App1"/>
 
     <Button
         android:layout_width="match_parent"
