@@ -5,12 +5,17 @@ import {
   Text,
   View
 } from 'react-native';
-import CommonPage from './CommonPage'
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class CommonPage extends Component<Props> {
   render() {
-    return <CommonPage name={'App1'}/>
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          this is {this.props.name}
+        </Text>
+      </View>
+    );
   }
 }
 
