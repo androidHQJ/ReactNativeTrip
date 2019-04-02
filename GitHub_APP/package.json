@@ -10,7 +10,6 @@
 		"@types/react": "^16.8.10",
 		"react": "16.0.0-alpha.6",
 		"react-native": "0.44.3",
-		"react-native-deprecated-custom-components": "git+https://github.com/facebookarchive/react-native-custom-components.git",
 		"react-native-tab-navigator": "^0.3.4"
 	},
 	"devDependencies": {
