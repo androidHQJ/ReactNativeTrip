@@ -40,4 +40,16 @@ public class MainActivity extends AppCompatActivity {
             RNPageActivity.start(this,moudleName);
         }
     }
+
+    public void cropImage(View view) {
+
+    }
+
+    public void QRCode(View view) {
+
+    }
+
+    public void navigator(View view) {
+        ReactPageActivity.start(this,"RNNavigationDemo");
+    }
 }

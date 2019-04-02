@@ -2,27 +2,38 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     Text,
+    Button,
     View,
     Image,
     TextInput,
-    Platform
+    Platform,
+    ToastAndroid
 } from 'react-native';
 import ImageCrop from './ImageCrop'
+import PermissionUtil from '../utils/PermissionUtil'
+
+/**
+ * 图片剪裁
+ * @type {string}
+ */
 const ASPECT_X="2";
 const ASPECT_Y="1";
-export default class App2 extends Component {
+export default class ImageCropApp extends Component {
     state = {
         result: ''
     }
 
     onSelectCrop() {
+        this.show("获取权限成功！");
         let x=this.aspectX?this.aspectX:ASPECT_X;
         let y=this.aspectY?this.aspectY:ASPECT_Y;
         ImageCrop.selectWithCrop(parseInt(x),parseInt(y)).then(result=> {
+            this.show("剪切成功！");
             this.setState({
                 result: result['imageUrl']?result['imageUrl']:result
             })
         }).catch(e=> {
+            this.show("剪切失败！");
             this.setState({
                 result: e
             })
@@ -53,16 +64,25 @@ export default class App2 extends Component {
                         defaultValue={ASPECT_Y}
                         onChangeText={aspectY=>this.aspectY=aspectY}
                     />
-                    <Text
-                        onPress={()=> this.onSelectCrop()}
-                    >裁切图片</Text>
-
+                    <Button
+                        onPress={()=> PermissionUtil
+                            .checkPermission(()=>{
+                                this.onSelectCrop()
+                            },null,["storage"])}
+                        title="裁切图片"
+                        color="grey"
+                    />
                 </View>
                 <Text>{imgUrl}</Text>
                 {imageView}
             </View>
         );
     }
+
+    show(data) {
+        ToastAndroid.showWithGravity(data,ToastAndroid.SHORT,ToastAndroid.CENTER)
+    }
+
 }
 
 const styles = StyleSheet.create({
@@ -76,6 +96,8 @@ const styles = StyleSheet.create({
     },
     input:{
         height:40,
-        width:40
+        width:40,
+        borderBottomColor: 'red',
+        borderBottomWidth: 1
     }
 });

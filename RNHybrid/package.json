@@ -6,7 +6,16 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.8.3",
-    "react-native": "^0.59.2"
+    "react-native": "^0.59.2",
+    "react-native-camera": "^2.2.0",
+    "react-native-deprecated-custom-components": "git+https://github.com/facebookarchive/react-native-custom-components.git",
+    "react-native-gesture-handler": "^1.1.0",
+    "react-native-permissions": "^1.1.1",
+    "react-native-qrcode-svg": "^5.1.2",
+    "react-native-svg": "^9.3.7",
+    "react-native-tab-navigator": "^0.3.4",
+    "react-navigation": "^3.6.0"
   }
 }

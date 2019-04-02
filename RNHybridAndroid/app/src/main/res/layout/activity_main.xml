@@ -9,7 +9,7 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
@@ -32,12 +32,31 @@
         android:id="@+id/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="App1/App2"
         android:text="App1"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="jump"
-        android:text="go to"/>
+        android:text="页面跳转两种方式"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="navigator"
+        android:text="导航器"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="cropImage"
+        android:text="图片裁剪"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="QRCode"
+        android:text="二维码生成与扫描"/>
 
 </LinearLayout>
