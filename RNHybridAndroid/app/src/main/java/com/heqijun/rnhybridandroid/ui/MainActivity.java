@@ -42,14 +42,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cropImage(View view) {
-
+        ReactPageActivity.start(this,"ImageCropApp");
     }
 
     public void QRCode(View view) {
-
+        ReactPageActivity.start(this,"QRRoot");
     }
 
     public void navigator(View view) {
-        ReactPageActivity.start(this,"RNNavigationDemo");
+        ReactNavigationActivity.start(this,"RNNavigationDemo");
     }
 }

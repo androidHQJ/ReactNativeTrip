@@ -2,6 +2,7 @@ import { AppRegistry } from 'react-native';
 import App from './src/common/App';
 import App2 from './src/common/App2';
 import ImageCropApp from "./src/imageCrop/ImageCropApp";
+import QRRoot from "./src/qrCode/QRRoot";
 import RnTabNavigatorDemo from "./src/component/navigator/rnTabNavigator/RnTabNavigatorDemo";
 import OfficialNavigatorDemo from "./src/component/navigator/officialNavigator/OfficialNavigatorDemo";
 import RNNavigationDemo from "./src/component/navigator/reactNavigation/RnNavigationDemo";
@@ -12,5 +13,6 @@ AppRegistry.registerComponent('ImageCropApp', () => ImageCropApp);
 AppRegistry.registerComponent('RnTabNavigatorDemo', () => RnTabNavigatorDemo)
 AppRegistry.registerComponent('OfficialNavigatorDemo', () => OfficialNavigatorDemo)
 AppRegistry.registerComponent('RNNavigationDemo', () => RNNavigationDemo)
+AppRegistry.registerComponent('QRRoot', () => QRRoot)
 
 

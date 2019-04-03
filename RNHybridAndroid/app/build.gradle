@@ -14,6 +14,13 @@ android {
         ndk {
             abiFilters "armeabi-v7a","x86"
         }
+
+        missingDimensionStrategy 'react-native-camera', 'general'
+        missingDimensionStrategy 'react-native-camera', 'mlkit'
+
+        packagingOptions {
+            exclude 'META-INF/androidx.exifinterface_exifinterface.version'
+        }
     }
     buildTypes {
         release {
@@ -33,4 +40,7 @@ dependencies {
     implementation('com.facebook.react:react-native:+') {// From node_modules
         exclude module: 'support-v4'
     }
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-camera')
+    implementation project(':react-native-svg')
 }

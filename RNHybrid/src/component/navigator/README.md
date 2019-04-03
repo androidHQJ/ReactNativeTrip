@@ -51,6 +51,8 @@ import { Navigator } from'react-native-deprecated-custom-components';
 
 [从navigator到react-navigation进阶教程](https://www.jianshu.com/p/8eaca7d0590f)
 
-[关于react-navigation 3.x的使用](https://www.jianshu.com/p/8f97574307cc)
+[React Navigation 3x开发指南](http://www.devio.org/2018/12/15/react-navigation3x/)
+
+[react-navigation3.0版本的使用详解](https://www.jianshu.com/p/e69d248f2f0f)
 #### (1).StackNavigator
 [『React Navigation 3x系列教程』之createStackNavigator开发指南](http://www.devio.org/2018/12/24/createStackNavigator/)

@@ -7,10 +7,10 @@ import {
     Image,
     TextInput,
     Platform,
-    ToastAndroid
 } from 'react-native';
 import ImageCrop from './ImageCrop'
 import PermissionUtil from '../utils/PermissionUtil'
+import ToastUtil from '../utils/ToastUtil'
 
 /**
  * 图片剪裁
@@ -24,16 +24,16 @@ export default class ImageCropApp extends Component {
     }
 
     onSelectCrop() {
-        this.show("获取权限成功！");
+        ToastUtil.show("获取权限成功！");
         let x=this.aspectX?this.aspectX:ASPECT_X;
         let y=this.aspectY?this.aspectY:ASPECT_Y;
         ImageCrop.selectWithCrop(parseInt(x),parseInt(y)).then(result=> {
-            this.show("剪切成功！");
+            ToastUtil.show("剪切成功！");
             this.setState({
                 result: result['imageUrl']?result['imageUrl']:result
             })
         }).catch(e=> {
-            this.show("剪切失败！");
+            ToastUtil.show("剪切失败！");
             this.setState({
                 result: e
             })
@@ -77,10 +77,6 @@ export default class ImageCropApp extends Component {
                 {imageView}
             </View>
         );
-    }
-
-    show(data) {
-        ToastAndroid.showWithGravity(data,ToastAndroid.SHORT,ToastAndroid.CENTER)
     }
 
 }
